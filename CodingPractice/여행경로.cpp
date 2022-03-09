@@ -12,53 +12,53 @@
 // 만일 가능한 경로가 2개 이상일 경우 알파벳 순서가 앞서는 경로를 return 합니다.
 // 모든 도시를 방문할 수 없는 경우는 주어지지 않습니다.
 
-#include <string>
-#include <vector>
-#include <queue>
-using namespace std;
+// #include <string>
+// #include <vector>
+// #include <queue>
+// using namespace std;
 
-vector<string> solution(vector<vector<string>> tickets) 
-{
-    vector<bool> isVisited;
-    vector<int> visitVec;
-    vector<string> visitCountry;
-    string vertex = "ICN"; //시작버텍스
+// vector<string> solution(vector<vector<string>> tickets) 
+// {
+//     vector<bool> isVisited;
+//     vector<int> visitVec;
+//     vector<string> visitCountry;
+//     string vertex = "ICN"; //시작버텍스
 
-    queue<string> q;
-    q.push(vertex);
+//     queue<string> q;
+//     q.push(vertex);
 
-    int idx = 0;
+//     int idx = 0;
 
-    while (!q.empty())
-    {
-        string v = q.front(); //q.공항이름을 v에 저장
-        q.pop();
+//     while (!q.empty())
+//     {
+//         string v = q.front(); //q.공항이름을 v에 저장
+//         q.pop();
 
-        if (isVisited[idx]) //만약 이미 공항에 다녀갔다면 
-            continue; //다시돌리기
+//         if (isVisited[idx]) //만약 이미 공항에 다녀갔다면 
+//             continue; //다시돌리기
         
-        isVisited[idx] = true;
-        idx++; //버텍스 숫자 하나 올려주기
+//         isVisited[idx] = true;
+//         idx++; //버텍스 숫자 하나 올려주기
         
-        visitCountry.push_back(v); //방문한 공항이름 푸쉬백
+//         visitCountry.push_back(v); //방문한 공항이름 푸쉬백
 
-        for (auto i : tickets[idx])
-        {
-            if (!isVisited[idx])
-                q.push(i);
-        }
-    }
+//         for (auto i : tickets[idx])
+//         {
+//             if (!isVisited[idx])
+//                 q.push(i);
+//         }
+//     }
     
-    return visitCountry;
-}
+//     return visitCountry;
+// }
 
-int main()
-{
-    vector<vector<string>> ticket {
-        {"ICN","JFK"}, //0
-        {"HND","IAD"}, //1
-        {"JFK","HND"}  //2
-    };
+// int main()
+// {
+//     vector<vector<string>> ticket {
+//         {"ICN","JFK"}, //0
+//         {"HND","IAD"}, //1
+//         {"JFK","HND"}  //2
+//     };
 
-    solution(ticket);
-}
+//     solution(ticket);
+// }
