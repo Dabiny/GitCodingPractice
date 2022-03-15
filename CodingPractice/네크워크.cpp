@@ -1,47 +1,42 @@
-////#include <string>
-////#include <vector>
-////#include <iostream>
-////#include <queue>
-////
-////using namespace std;
-////
-//int solution(int n, vector<vector<int>> computers)
-//{
-//	vector<bool> visited(n, false);
-//	int check = 0; //네트워크 개수
-//
-//	for (int i = 0; i < n; i++)
-//	{
-//		if (visited[i])
-//			continue;
-//
-//		queue<int> q; //큐생성
-//		q.push(i); //큐에 i값 집어넣기
-//
-//		while (!q.empty())
-//		{
-//			int v = q.front();
-//			q.pop();
-//
-//			if (visited[v])
-//				continue;
-//
-//			visited[v] = true;
-//
-//			for (int j = 0; j < n; j++)
-//			{
-//				if (v != j && computers[v][j] == 1 && !visited[j])
-//				{
-//					q.push(j);
-//				}
-//			}
-//		}
-//
-//		check++;
-//	}
-//
-//	return check;
-//}
+// #include <string>
+// #include <vector>
+// #include <queue>
+// #include <iostream>
+
+// using namespace std;
+
+// int solution(int n, vector<vector<int>> computers) 
+// {
+// 	vector<bool> visited (n, false);
+// 	int count = 0;
+
+// 	for (int i = 0; i < n; i++)
+// 	{
+// 		if(visited[i]) continue;
+
+// 		queue<int> q;
+// 		q.push(i);
+
+// 		while(!q.empty())
+// 		{
+// 			int v = q.front();
+// 			q.pop();
+
+// 			if (visited[v]) continue;
+
+// 			visited[v] = true;
+
+// 			for (int j = 0; j < n; j++)
+// 			{
+// 				if( v != j && computers[v][j] == 1 && !visited[j])
+// 					q.push(j);
+// 			}
+// 		}
+
+// 		count++;
+// 	}
+// 	return count;
+// }
 //
 //int main()
 //{
