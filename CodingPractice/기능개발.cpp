@@ -37,56 +37,57 @@
 
 */
 
-#include <string>
-#include <vector>
-#include <queue>
+// #include <string>
+// #include <vector>
+// #include <queue>
 
-using namespace std;
+// using namespace std;
 
-vector<int> solution(vector<int> progresses, vector<int> speeds) 
-{
-    queue<int> q; //progresses
-    queue<int> s;
+// vector<int> solution(vector<int> progresses, vector<int> speeds) 
+// {
+//     queue<int> q; //progresses
+//     queue<int> s;
 
-    vector<int> answer;
-    vector<int> count;
+//     vector<int> answer;
+//     vector<int> count;
 
-    for (auto& i : progresses)
-        q.push(i);
+//     for (auto& i : progresses)
+//         q.push(i);
     
-    for (auto& i : speeds)
-        q.push(i);
+//     for (auto& i : speeds)
+//         q.push(i);
 
-    while (!q.empty())
-    {   
-        int num = 1;
-        int count = (100 - q.front()) % s.front() != 0 ? (int)(100 - q.front()) / s.front() + 1 : (int)(100 - q.front()) / s.front() ;
-        q.pop();
-        s.pop();
+//     while (!q.empty())
+//     {   
+//         int num = 1;
+//         int count = (100 - q.front()) % s.front() != 0 ? (int)(100 - q.front()) / s.front() + 1 : (int)(100 - q.front()) / s.front() ;
+//         q.pop();
+//         s.pop();
 
-        int count2 = (100 - q.front()) % s.front() != 0 ? (int)(100 - q.front()) / s.front() + 1 : (int)(100 - q.front()) / s.front();
+//         int count2 = (100 - q.front()) % s.front() != 0 ? (int)(100 - q.front()) / s.front() + 1 : (int)(100 - q.front()) / s.front();
       
-        if (count <= count2)
-            num++;
-        else
-            num = 1;
+//         if (count <= count2)
+//             num++;
+//         else
+//             num = 1;
 
-        answer.push_back(num);
-    }
+//         answer.push_back(num);
+//     }
 
-    return answer;
-}
-
-
+//     return answer;
+// }
 
 
-int main()
-{
-    vector<int> p { 93, 30, 35 };
-    vector<int> s { 1, 30, 5 };
 
-    solution(p,s);
-}
+
+// int main()
+// {
+//     vector<int> p { 93, 30, 35 };
+//     vector<int> s { 1, 30, 5 };
+
+//     solution(p,s);
+// }
+
     // q.front() % ( 100 - q.front() ) != 0 ? ( 100 - q.front() ) / q.front() + 1 : (100 - q.front()) / q.front();
     // queue <int> pro;
     // queue <int> sp;
