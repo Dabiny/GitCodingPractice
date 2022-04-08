@@ -40,55 +40,55 @@
 //     return answer;
 // }
 
-#include <vector>
-#include <string>
+// #include <vector>
+// #include <string>
 
-using namespace std;
+// using namespace std;
 
-int answer = 50;
-bool visited[50];
+// int answer = 50;
+// bool visited[50];
 
-bool check_diff(const string& a, const string& b)
-{
-    int dif_cnt = 0; 
+// bool check_diff(const string& a, const string& b)
+// {
+//     int dif_cnt = 0; 
 
-    for (int i = 0; i < a.size(); i++)
-    {
-        if (a[i] != b[i]) dif_cnt++;
-    }
+//     for (int i = 0; i < a.size(); i++)
+//     {
+//         if (a[i] != b[i]) dif_cnt++;
+//     }
 
-    if (dif_cnt == 1) return true;
+//     if (dif_cnt == 1) return true;
 
-    return false;
-}
+//     return false;
+// }
 
-void DFS (string begin, string target, vector<string>words, int step)
-{
-    if (answer <= step) 
-        return;
+// void DFS (string begin, string target, vector<string>words, int step)
+// {
+//     if (answer <= step) 
+//         return;
     
-    if (begin == target)
-        answer = min (answer, step);
-        return;
+//     if (begin == target)
+//         answer = min (answer, step);
+//         return;
 
-    for (int i = 0; i < words.size(); i++)
-    {
-        if (check_diff(begin, words[i]) && !visited[i])
-            visited[i] = true;
-            DFS (words[i], target, words, step + 1);
-            visited[i] = false; // 재귀 리턴 후 백트래킹 조건 
-    }
+//     for (int i = 0; i < words.size(); i++)
+//     {
+//         if (check_diff(begin, words[i]) && !visited[i])
+//             visited[i] = true;
+//             DFS (words[i], target, words, step + 1);
+//             visited[i] = false; // 재귀 리턴 후 백트래킹 조건 
+//     }
 
-    return;
-}
+//     return;
+// }
 
-int solution(string begin, string target, vector<string>words)
-{
-    DFS (begin, target, words, 0);
+// int solution(string begin, string target, vector<string>words)
+// {
+//     DFS (begin, target, words, 0);
 
-    if (answer == 50)
-        return 0;
+//     if (answer == 50)
+//         return 0;
     
-    return answer;
-}
+//     return answer;
+// }
 

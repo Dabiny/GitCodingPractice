@@ -40,27 +40,27 @@
 //
 ////해쉬 맵 답안 일주일 후 다시 풀어보기
 //
-//bool solution(vector<string>phone_book)
-//{
-//	unordered_map<string, int> map;
-//
-//	for (int i = 0; i < phone_book.size(); i++)
-//	{
-//		map[phone_book[i]] = 1;
-//	}
-//
-//	for (int i = 0; i < phone_book.size(); i++)
-//	{
-//		for (int j = 0; j < phone_book[i].size() - 1; j++)
-//		{
-//			string phone_number = phone_book[i].substr(0, j + 1);
-//
-//			if (map[phone_number])
-//			{
-//				return false;
-//			}
-//		}
-//	}
-//
-//	return true;
-//}
+bool solution(vector<string>phone_book)
+{
+	unordered_map<string, int> map;
+
+	for (int i = 0; i < phone_book.size(); i++)
+	{
+		map[phone_book[i]] = 1;
+	}
+
+	for (int i = 0; i < phone_book.size(); i++)
+	{
+		for (int j = 0; j < phone_book[i].size() - 1; j++)
+		{
+			string phone_number = phone_book[i].substr(0, j + 1);
+
+			if (map[phone_number])
+			{
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
